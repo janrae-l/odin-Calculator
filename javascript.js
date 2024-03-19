@@ -1,3 +1,7 @@
+const numberContainer = document.querySelector(".num-container");
+const calcDisplay = document.querySelector(".calcu-display");
+let numberPressed = [];
+
 const add = function (a, b) {
   return a + b;
 };
@@ -28,3 +32,14 @@ const operate = function (a, b, operate) {
     divide(a, b);
   }
 };
+
+const numberDisplay = function () {
+  if (event.target.tagName === "BUTTON") {
+    numberPressed.push(event.target.innerText);
+    console.log(numberPressed);
+    let numStr = numberPressed.join("");
+    numberDisplay.textContent = numStr;
+  }
+};
+
+numberContainer.addEventListener("click", numberDisplay);
