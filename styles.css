@@ -22,16 +22,16 @@
 .num-container {
   display: flex;
   margin: 0 18px 0px 18px;
-
+  width: 450px;
   height: 325px;
   /*border: solid 1px black;*/
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   align-content: space-evenly;
 }
 
 button {
-  width: 105px;
-  height: 65px;
+  width: 107px;
+  height: 72px;
 }
