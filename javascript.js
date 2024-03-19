@@ -38,8 +38,8 @@ const numberDisplay = function () {
     numberPressed.push(event.target.innerText);
     console.log(numberPressed);
     let numStr = numberPressed.join("");
-    numberDisplay.textContent = numStr;
+    calcDisplay.textContent = numStr;
   }
 };
-
+numberDisplay.textContent = "Hello";
 numberContainer.addEventListener("click", numberDisplay);
