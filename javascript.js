@@ -38,6 +38,10 @@ const operate = function (a, b, operate) {
 
 const numberDisplay = function () {
   if (event.target.tagName === "BUTTON") {
+    if (event.target.innerText === "=") {
+      const resultNum = operate(firstNum, secNum, operator);
+      calcDisplay.textContent = resultNum;
+    }
     numberPressed.push(event.target.innerText);
     console.log(numberPressed);
     let numStr = numberPressed.join("");
@@ -55,5 +59,6 @@ firstNum = numberPressed.slice(0, index).join("");
 secNum = numberPressed.slice(index + 1).join("");
 
 isEqualTo.addEventListener("click", function () {
-  operate(firstNum, secNum, operator);
+  const resultNum = operate(firstNum, secNum, operator);
+  calcDisplay.textContent = resultNum;
 });
