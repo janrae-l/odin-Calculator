@@ -26,37 +26,43 @@ const operate = function (a, b, operate) {
   const first = +a;
   const sec = +b;
   if (operate === "+") {
-    add(first, sec);
+    return add(first, sec);
   } else if (operate === "-") {
-    subtract(first, sec);
+    return subtract(first, sec);
   } else if (operate === "*") {
-    multiply(first, sec);
+    return multiply(first, sec);
   } else if (operate === "/") {
-    divide(first, sec);
+    return divide(first, sec);
   }
 };
 
 const numberDisplay = function () {
   if (event.target.tagName === "BUTTON") {
     if (event.target.innerText === "=") {
+      calcDisplay.textContent = "";
+      operator = numberPressed.find(
+        (item) => item === "+" || item === "-" || item === "*" || item === "/"
+      );
+      console.log(operator);
+      const index = numberPressed.indexOf(operator);
+      console.log(index);
+      firstNum = numberPressed.slice(0, index).join("");
+      console.log(firstNum);
+      secNum = numberPressed.slice(index + 1).join("");
+      console.log(secNum);
       const resultNum = operate(firstNum, secNum, operator);
+      console.log(resultNum);
       calcDisplay.textContent = resultNum;
+    } else {
+      numberPressed.push(event.target.innerText);
+      console.log(numberPressed);
+      let numStr = numberPressed.join("");
+      calcDisplay.textContent = numStr;
     }
-    numberPressed.push(event.target.innerText);
-    console.log(numberPressed);
-    let numStr = numberPressed.join("");
-    calcDisplay.textContent = numStr;
   }
 };
 numberDisplay.textContent = "Hello";
 numberContainer.addEventListener("click", numberDisplay);
-
-operator = numberPressed.find(
-  (item) => item === "+" || item === "-" || item === "*" || item === "/"
-);
-const index = numberPressed.indexOf(operator);
-firstNum = numberPressed.slice(0, index).join("");
-secNum = numberPressed.slice(index + 1).join("");
 
 isEqualTo.addEventListener("click", function () {
   const resultNum = operate(firstNum, secNum, operator);
