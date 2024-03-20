@@ -15,9 +15,9 @@ const divide = function (a, b) {
   return a / b;
 };
 
-const firstNum = 0;
-const secNum = 0;
-const operator = "";
+let firstNum = 0;
+let secNum = 0;
+let operator = "";
 
 const operate = function (a, b, operate) {
   //Takes numbers a and b
@@ -43,3 +43,10 @@ const numberDisplay = function () {
 };
 numberDisplay.textContent = "Hello";
 numberContainer.addEventListener("click", numberDisplay);
+
+operator = numberPressed.find(
+  (item) => item === "+" || item === "-" || item === "*" || item === "/"
+);
+const index = numberPressed.indexOf(operator);
+firstNum = numberPressed.slice(0, index);
+secNum = numberPressed.slice(index + 1);
