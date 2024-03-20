@@ -1,5 +1,6 @@
 const numberContainer = document.querySelector(".num-container");
 const calcDisplay = document.querySelector(".calcu-display");
+const isEqualTo = document.querySelector(".operate");
 let numberPressed = [];
 
 const add = function (a, b) {
@@ -22,14 +23,16 @@ let operator = "";
 const operate = function (a, b, operate) {
   //Takes numbers a and b
   //Use the operate param to figure out what operations are to be done in numbers a and b
+  const first = +a;
+  const sec = +b;
   if (operate === "+") {
-    add(a, b);
+    add(first, sec);
   } else if (operate === "-") {
-    subtract(a, b);
+    subtract(first, sec);
   } else if (operate === "*") {
-    multiply(a, b);
+    multiply(first, sec);
   } else if (operate === "/") {
-    divide(a, b);
+    divide(first, sec);
   }
 };
 
@@ -48,5 +51,9 @@ operator = numberPressed.find(
   (item) => item === "+" || item === "-" || item === "*" || item === "/"
 );
 const index = numberPressed.indexOf(operator);
-firstNum = numberPressed.slice(0, index);
-secNum = numberPressed.slice(index + 1);
+firstNum = numberPressed.slice(0, index).join("");
+secNum = numberPressed.slice(index + 1).join("");
+
+isEqualTo.addEventListener("click", function () {
+  operate(firstNum, secNum, operator);
+});
