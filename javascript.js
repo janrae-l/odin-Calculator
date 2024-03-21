@@ -16,8 +16,8 @@ const divide = function (a, b) {
   return a / b;
 };
 
-let firstNum = 0;
-let secNum = 0;
+let firstNum = "";
+let secNum = "";
 let operator = "";
 
 const operate = function (a, b, operate) {
@@ -54,10 +54,12 @@ const numberDisplay = function () {
       console.log(resultNum);
       calcDisplay.textContent = resultNum;
     } else {
-      numberPressed.push(event.target.innerText);
-      console.log(numberPressed);
-      let numStr = numberPressed.join("");
-      calcDisplay.textContent = numStr;
+      //numberPressed.push(event.target.innerText);
+      firstNum += event.target.innerText;
+      console.log(firstNum);
+      //console.log(numberPressed);
+      //let numStr = numberPressed.join("");
+      calcDisplay.textContent = firstNum;
     }
   }
 };
