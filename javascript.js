@@ -2,6 +2,7 @@ const numberContainer = document.querySelector(".numbers");
 const calcDisplay = document.querySelector(".calcu-display");
 const isEqualTo = document.querySelector(".operate");
 const operations = document.querySelector(".operations");
+const clearDisplay = document.querySelector(".clear");
 
 const add = function (a, b) {
   return a + b;
@@ -86,6 +87,7 @@ const operationPress = function () {
       calcDisplay.textContent = result;
       firstNum = result;
       console.log(firstNum);
+      operator = event.target.innerText;
     } else {
       operator = event.target.innerText;
     }
@@ -95,6 +97,13 @@ numberDisplay.textContent = "Hello";
 numberContainer.addEventListener("click", numberPressed);
 
 operations.addEventListener("click", operationPress);
+
+clearDisplay.addEventListener("click", function () {
+  calcDisplay.textContent = "";
+  firstNum = "";
+  secNum = "";
+  operator = 0;
+});
 
 isEqualTo.addEventListener("click", function () {
   const resultNum = operate(firstNum, secNum, operator);
