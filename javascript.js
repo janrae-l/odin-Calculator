@@ -37,7 +37,7 @@ const operate = function (a, b, operate) {
     return divide(first, sec);
   }
 };
-
+/*
 const numberDisplay = function () {
   if (event.target.tagName === "BUTTON") {
     if (event.target.innerText === "=") {
@@ -65,7 +65,7 @@ const numberDisplay = function () {
     }
   }
 };
-
+*/
 const numberPressed = function () {
   if (event.target.tagName === "BUTTON") {
     if (operator.length === 1) {
@@ -86,6 +86,7 @@ const operationPress = function () {
       result = operate(firstNum, secNum, operator);
       calcDisplay.textContent = result;
       firstNum = result;
+      secNum = "";
       console.log(firstNum);
       operator = event.target.innerText;
     } else {
@@ -93,7 +94,7 @@ const operationPress = function () {
     }
   }
 };
-numberDisplay.textContent = "Hello";
+//numberDisplay.textContent = "Hello";
 numberContainer.addEventListener("click", numberPressed);
 
 operations.addEventListener("click", operationPress);
