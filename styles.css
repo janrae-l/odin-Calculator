@@ -25,13 +25,37 @@
   width: 450px;
   height: 325px;
   /*border: solid 1px black;*/
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  align-content: space-evenly;
+  flex-direction: column;
 }
 
+.otherButtons {
+  display: flex;
+  justify-content: space-between;
+  align-content: space-between;
+}
+.numOperation {
+  display: flex;
+  justify-content: space-between;
+}
+
+.numbers {
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 3;
+  justify-content: space-between;
+  align-content: space-between;
+}
+
+.operations {
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+}
 button {
-  width: 107px;
-  height: 72px;
+  width: 112px;
+  height: 65px;
+}
+
+.numZero {
+  flex-grow: 3;
 }
