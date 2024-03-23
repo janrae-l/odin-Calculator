@@ -31,7 +31,7 @@ const operate = function (a, b, operate) {
     return add(first, sec);
   } else if (operate === "-") {
     return subtract(first, sec);
-  } else if (operate === "*") {
+  } else if (operate === "x") {
     return multiply(first, sec);
   } else if (operate === "/") {
     return divide(first, sec);
@@ -68,7 +68,7 @@ const numberDisplay = function () {
 */
 const numberPressed = function () {
   if (event.target.tagName === "BUTTON") {
-    if (operator.length === 1) {
+    if (operator.length === 1 && firstNum.length) {
       secNum += event.target.innerText;
       console.log(secNum);
       calcDisplay.textContent = secNum;
@@ -84,13 +84,16 @@ const operationPress = function () {
   if (event.target.tagName === "BUTTON") {
     if (firstNum.length > 0 && secNum.length > 0) {
       result = operate(firstNum, secNum, operator);
+      console.log(result);
       calcDisplay.textContent = result;
       firstNum = result;
       secNum = "";
       console.log(firstNum);
       operator = event.target.innerText;
+      console.log(operator);
     } else {
       operator = event.target.innerText;
+      console.log(operator);
     }
   }
 };
