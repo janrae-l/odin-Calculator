@@ -27,14 +27,19 @@ const operate = function (a, b, operate) {
   //Use the operate param to figure out what operations are to be done in numbers a and b
   const first = +a;
   const sec = +b;
-  if (operate === "+") {
-    return add(first, sec);
-  } else if (operate === "-") {
-    return subtract(first, sec);
-  } else if (operate === "x") {
-    return multiply(first, sec);
-  } else if (operate === "/") {
-    return divide(first, sec);
+  switch (operate) {
+    case "+":
+      return add(first, sec);
+      break;
+    case "-":
+      return subtract(first, sec);
+      break;
+    case "x":
+      return multiply(first, sec);
+      break;
+    case "/":
+      return divide(first, sec);
+      break;
   }
 };
 /*
