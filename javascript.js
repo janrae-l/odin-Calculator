@@ -68,7 +68,7 @@ const numberDisplay = function () {
 */
 const numberPressed = function () {
   if (event.target.tagName === "BUTTON") {
-    if (operator.length === 1 && firstNum.length) {
+    if (operator.length === 1) {
       secNum += event.target.innerText;
       console.log(secNum);
       calcDisplay.textContent = secNum;
@@ -86,7 +86,7 @@ const operationPress = function () {
       result = operate(firstNum, secNum, operator);
       console.log(result);
       calcDisplay.textContent = result;
-      firstNum = result;
+      firstNum = String(result);
       secNum = "";
       console.log(firstNum);
       operator = event.target.innerText;
@@ -106,7 +106,7 @@ clearDisplay.addEventListener("click", function () {
   calcDisplay.textContent = "";
   firstNum = "";
   secNum = "";
-  operator = 0;
+  operator = "";
 });
 
 isEqualTo.addEventListener("click", function () {
