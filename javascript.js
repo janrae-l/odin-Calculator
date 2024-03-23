@@ -67,7 +67,7 @@ const numberDisplay = function () {
 
 const numberPressed = function () {
   if (event.target.tagName === "BUTTON") {
-    if (operate.length === 1) {
+    if (operator.length === 1) {
       secNum += event.target.innerText;
       console.log(secNum);
       calcDisplay.textContent = secNum;
@@ -82,11 +82,12 @@ const numberPressed = function () {
 const operationPress = function () {
   if (event.target.tagName === "BUTTON") {
     if (firstNum.length > 0 && secNum.length > 0) {
-      result = operate(firstNum, secNum, operate);
+      result = operate(firstNum, secNum, operator);
       calcDisplay.textContent = result;
       firstNum = result;
+      console.log(firstNum);
     } else {
-      operate = event.target.innerText;
+      operator = event.target.innerText;
     }
   }
 };
