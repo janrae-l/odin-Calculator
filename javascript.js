@@ -1,7 +1,7 @@
-const numberContainer = document.querySelector(".num-container");
+const numberContainer = document.querySelector(".numbers");
 const calcDisplay = document.querySelector(".calcu-display");
 const isEqualTo = document.querySelector(".operate");
-let numberPressed = [];
+const operations = document.querySelector(".operations");
 
 const add = function (a, b) {
   return a + b;
@@ -19,6 +19,7 @@ const divide = function (a, b) {
 let firstNum = "";
 let secNum = "";
 let operator = "";
+let result = 0;
 
 const operate = function (a, b, operate) {
   //Takes numbers a and b
@@ -63,8 +64,36 @@ const numberDisplay = function () {
     }
   }
 };
+
+const numberPressed = function () {
+  if (event.target.tagName === "BUTTON") {
+    if (firstNum.length === 0) {
+      firstNum += event.target.innerText;
+      console.log(firstNum);
+      calcDisplay.textContent = firstNum;
+    } else if (operate.length === 1) {
+      secNum += event.target.innerText;
+      console.log(secNum);
+      calcDisplay.textContent = secNum;
+    }
+  }
+};
+
+const operationPress = function () {
+  if (event.target.tagName === "BUTTON") {
+    if (firstNum.length > 0 && secNum.length > 0) {
+      result = operate(firstNum, secNum, operate);
+      calcDisplay.textContent = result;
+      firstNum = result;
+    } else {
+      operate = event.target.innerText;
+    }
+  }
+};
 numberDisplay.textContent = "Hello";
-numberContainer.addEventListener("click", numberDisplay);
+numberContainer.addEventListener("click", numberPressed);
+
+operations.addEventListener("click", operationPress);
 
 isEqualTo.addEventListener("click", function () {
   const resultNum = operate(firstNum, secNum, operator);
