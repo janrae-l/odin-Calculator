@@ -67,14 +67,14 @@ const numberDisplay = function () {
 
 const numberPressed = function () {
   if (event.target.tagName === "BUTTON") {
-    if (firstNum.length === 0) {
-      firstNum += event.target.innerText;
-      console.log(firstNum);
-      calcDisplay.textContent = firstNum;
-    } else if (operate.length === 1) {
+    if (operate.length === 1) {
       secNum += event.target.innerText;
       console.log(secNum);
       calcDisplay.textContent = secNum;
+    } else {
+      firstNum += event.target.innerText;
+      console.log(firstNum);
+      calcDisplay.textContent = firstNum;
     }
   }
 };
