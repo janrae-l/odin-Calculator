@@ -115,6 +115,13 @@ clearDisplay.addEventListener("click", function () {
 });
 
 isEqualTo.addEventListener("click", function () {
-  const resultNum = operate(firstNum, secNum, operator).toFixed(2);
-  calcDisplay.textContent = resultNum;
+  if (firstNum.length > 0 || operator.length > 0) {
+    let displayErr = `${
+      firstNum.length > 0 ? "No first number" : "No second number!"
+    }`;
+    calcDisplay.textContent = displayErr;
+  } else {
+    const resultNum = operate(firstNum, secNum, operator).toFixed(2);
+    calcDisplay.textContent = resultNum;
+  }
 });
