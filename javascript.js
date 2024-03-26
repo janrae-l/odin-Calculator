@@ -79,7 +79,7 @@ const numberPressed = function () {
       calcDisplay.textContent = secNum;
     } else {
       firstNum += event.target.innerText;
-      console.log(firstNum);
+      console.log(typeof firstNum, firstNum);
       calcDisplay.textContent = firstNum;
     }
   }
@@ -88,7 +88,10 @@ const numberPressed = function () {
 const operationPress = function () {
   if (event.target.tagName === "BUTTON") {
     if (firstNum.length > 0 && secNum.length > 0) {
-      result = operate(firstNum, secNum, operator).toFixed(2);
+      result = operate(firstNum, secNum, operator);
+      if (result % 1 !== 0) {
+        result.toFixed(2);
+      }
       console.log(result);
       calcDisplay.textContent = result;
       firstNum = String(result);
@@ -115,13 +118,17 @@ clearDisplay.addEventListener("click", function () {
 });
 
 isEqualTo.addEventListener("click", function () {
-  if (firstNum.length > 0 || operator.length > 0) {
+  if (operator.length === 0 || secNum.length === 0) {
     let displayErr = `${
-      firstNum.length > 0 ? "No first number" : "No second number!"
+      operator.length === 0 ? "No operator!" : "No second number"
     }`;
     calcDisplay.textContent = displayErr;
+    firstNum = "";
   } else {
-    const resultNum = operate(firstNum, secNum, operator).toFixed(2);
+    const resultNum = operate(firstNum, secNum, operator);
+    if (resultNum % 1 !== 0) {
+      resultNum.toFixed(2);
+    }
     calcDisplay.textContent = resultNum;
   }
 });
