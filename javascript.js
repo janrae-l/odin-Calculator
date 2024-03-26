@@ -89,7 +89,7 @@ const operationPress = function () {
   if (event.target.tagName === "BUTTON") {
     if (firstNum.length > 0 && secNum.length > 0) {
       result = operate(firstNum, secNum, operator);
-      if (result % 1 !== 0) {
+      if (!Number.isInteger(result)) {
         result.toFixed(2);
       }
       console.log(result);
@@ -126,7 +126,7 @@ isEqualTo.addEventListener("click", function () {
     firstNum = "";
   } else {
     const resultNum = operate(firstNum, secNum, operator);
-    if (resultNum % 1 !== 0) {
+    if (!Number.isInteger(resultNum)) {
       resultNum.toFixed(2);
     }
     calcDisplay.textContent = resultNum;
