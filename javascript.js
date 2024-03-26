@@ -88,7 +88,7 @@ const numberPressed = function () {
 const operationPress = function () {
   if (event.target.tagName === "BUTTON") {
     if (firstNum.length > 0 && secNum.length > 0) {
-      result = operate(firstNum, secNum, operator);
+      result = operate(firstNum, secNum, operator).toFixed(2);
       console.log(result);
       calcDisplay.textContent = result;
       firstNum = String(result);
@@ -115,6 +115,6 @@ clearDisplay.addEventListener("click", function () {
 });
 
 isEqualTo.addEventListener("click", function () {
-  const resultNum = operate(firstNum, secNum, operator);
+  const resultNum = operate(firstNum, secNum, operator).toFixed(2);
   calcDisplay.textContent = resultNum;
 });
