@@ -42,6 +42,16 @@ const operate = function (a, b, operate) {
       break;
   }
 };
+
+function isDecimal(n) {
+  const number = n - Math.floor(n) !== 0;
+
+  if (number) {
+    return n.toFixed(2);
+  } else {
+    return n;
+  }
+}
 /*
 const numberDisplay = function () {
   if (event.target.tagName === "BUTTON") {
@@ -88,10 +98,8 @@ const numberPressed = function () {
 const operationPress = function () {
   if (event.target.tagName === "BUTTON") {
     if (firstNum.length > 0 && secNum.length > 0) {
-      result = operate(firstNum, secNum, operator);
-      if (!Number.isInteger(result)) {
-        result.toFixed(2);
-      }
+      result = isDecimal(operate(firstNum, secNum, operator));
+
       console.log(result);
       calcDisplay.textContent = result;
       firstNum = String(result);
@@ -125,10 +133,8 @@ isEqualTo.addEventListener("click", function () {
     calcDisplay.textContent = displayErr;
     firstNum = "";
   } else {
-    const resultNum = operate(firstNum, secNum, operator);
-    if (!Number.isInteger(resultNum)) {
-      resultNum.toFixed(2);
-    }
+    const resultNum = isDecimal(operate(firstNum, secNum, operator));
+
     calcDisplay.textContent = resultNum;
   }
 });
