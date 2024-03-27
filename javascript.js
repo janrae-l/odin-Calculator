@@ -3,6 +3,7 @@ const calcDisplay = document.querySelector(".calcu-display");
 const isEqualTo = document.querySelector(".operate");
 const operations = document.querySelector(".operations");
 const clearDisplay = document.querySelector(".clear");
+const decimalBtn = document.querySelector(".period");
 
 const add = function (a, b) {
   return a + b;
@@ -84,10 +85,20 @@ const numberDisplay = function () {
 const numberPressed = function () {
   if (event.target.tagName === "BUTTON") {
     if (operator.length === 1) {
+      if (secNum.includes(".")) {
+        decimalBtn.disabled = true;
+      } else {
+        decimalBtn.disabled = false;
+      }
       secNum += event.target.innerText;
       console.log(secNum);
       calcDisplay.textContent = secNum;
     } else {
+      if (firstNum.includes(".")) {
+        decimalBtn.disabled = true;
+      } else {
+        decimalBtn.disabled = false;
+      }
       firstNum += event.target.innerText;
       console.log(typeof firstNum, firstNum);
       calcDisplay.textContent = firstNum;
