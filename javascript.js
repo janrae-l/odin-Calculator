@@ -4,6 +4,7 @@ const isEqualTo = document.querySelector(".operate");
 const operations = document.querySelector(".operations");
 const clearDisplay = document.querySelector(".clear");
 const decimalBtn = document.querySelector(".period");
+const backspace = document.querySelector(".backspace");
 
 const add = function (a, b) {
   return a + b;
@@ -22,6 +23,7 @@ let firstNum = "";
 let secNum = "";
 let operator = "";
 let result = 0;
+let poppedVar = "";
 
 const operate = function (a, b, operate) {
   //Takes numbers a and b
@@ -52,6 +54,12 @@ function isDecimal(n) {
   } else {
     return n;
   }
+}
+
+function popItem(item) {
+  arr = item.split("");
+  arr.pop();
+  return arr;
 }
 /*
 const numberDisplay = function () {
@@ -147,5 +155,19 @@ isEqualTo.addEventListener("click", function () {
     const resultNum = isDecimal(operate(firstNum, secNum, operator));
 
     calcDisplay.textContent = resultNum;
+  }
+});
+
+backspace.addEventListener("click", function () {
+  if (event.target.tagName === "BUTTON") {
+    if (operator.length > 0) {
+      poppedVar = popItem(secNum).join("");
+      calcDisplay.textContent = poppedVar;
+      secNum = poppedVar;
+    } else {
+      poppedVar = popItem(firstNum).join("");
+      calcDisplay.textContent = poppedVar;
+      firstNum = poppedVar;
+    }
   }
 });
