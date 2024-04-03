@@ -11,6 +11,8 @@ body {
   width: 500px;
   height: 600px;
   border: solid 1px black;
+  border-radius: 10px;
+
   display: flex;
   flex-direction: column;
   align-content: space-evenly;
@@ -22,6 +24,8 @@ body {
   width: 450px;
   height: 200px;
   border: solid 1px black;
+  border-radius: 10px;
+
   /*margin: 25px;*/
 }
 
