@@ -79,7 +79,12 @@ button {
 .close-modal {
   font-size: 35px;
   padding: 0;
-  justify-content: end;
+  height: 35px;
+  width: 35px;
+  display: flex;
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
   color: #333;
   background: none;
   border: none;
