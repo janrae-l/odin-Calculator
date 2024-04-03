@@ -102,3 +102,7 @@ button {
   height: 50px;
   border-radius: 5px;
 }
+
+.error-msg {
+  font-size: 25px;
+}
