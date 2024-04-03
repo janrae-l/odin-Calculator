@@ -75,16 +75,18 @@ button {
   display: flex;
   flex-direction: column;
 }
-
+.close-cont {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
 .close-modal {
   font-size: 35px;
   padding: 0;
   height: 35px;
   width: 35px;
-  display: flex;
-  position: absolute;
-
-  right: 2rem;
+  justify-content: flex-end;
+  align-items: center;
   color: #333;
   background: none;
   border: none;
