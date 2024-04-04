@@ -140,12 +140,16 @@ const operationPress = function () {
 const openModal = function () {
   modal.classList.remove("hidden");
   overlay.classList.remove("hidden");
+  console.log();
 };
 
 const closeModal = function () {
   modal.classList.add("hidden");
   overlay.classList.add("hidden");
   console.log("closeModal clicked");
+  for (let items of modal.classList) {
+    console.log(items);
+  }
 };
 //numberDisplay.textContent = "Hello";
 numberContainer.addEventListener("click", numberPressed);
