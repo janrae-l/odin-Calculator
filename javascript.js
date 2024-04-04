@@ -136,46 +136,10 @@ const operationPress = function () {
     }
   }
 };
-
-const openModal = function () {
-  modal.classList.remove("hidden");
-  overlay.classList.remove("hidden");
-  console.log();
-};
-
-const closeModal = function () {
-  modal.classList.add("hidden");
-  overlay.classList.add("hidden");
-  console.log("closeModal clicked");
-  for (let items of modal.classList) {
-    console.log(items);
-  }
-};
 //numberDisplay.textContent = "Hello";
 numberContainer.addEventListener("click", numberPressed);
 
 operations.addEventListener("click", operationPress);
-
-clearBtn.addEventListener("click", function () {
-  if (firstNum.length > 0 || operator.length > 0 || secNum.length > 0) {
-    openModal();
-  } else {
-    calcDisplay.textContent = "";
-    firstNum = "";
-    secNum = "";
-    operator = "";
-  }
-});
-
-clearDisplay.addEventListener("click", function () {
-  calcDisplay.textContent = "";
-  firstNum = "";
-  secNum = "";
-  operator = "";
-  closeModal();
-});
-btnCloseModal.addEventListener("click", closeModal);
-overlay.addEventListener("click", closeModal);
 
 isEqualTo.addEventListener("click", function () {
   if (operator.length === 0 || secNum.length === 0) {
@@ -203,4 +167,40 @@ backspace.addEventListener("click", function () {
       firstNum = poppedVar;
     }
   }
+});
+
+const openModal = function () {
+  modal.classList.remove("hidden");
+  overlay.classList.remove("hidden");
+  console.log();
+};
+
+const closeModal = function () {
+  modal.classList.add("hidden");
+  overlay.classList.add("hidden");
+  console.log("closeModal clicked");
+  for (let items of modal.classList) {
+    console.log(items);
+  }
+};
+btnCloseModal.addEventListener("click", closeModal);
+overlay.addEventListener("click", closeModal);
+
+clearBtn.addEventListener("click", function () {
+  if (firstNum.length > 0 || operator.length > 0 || secNum.length > 0) {
+    openModal();
+  } else {
+    calcDisplay.textContent = "";
+    firstNum = "";
+    secNum = "";
+    operator = "";
+  }
+});
+
+clearDisplay.addEventListener("click", function () {
+  calcDisplay.textContent = "";
+  firstNum = "";
+  secNum = "";
+  operator = "";
+  closeModal();
 });
