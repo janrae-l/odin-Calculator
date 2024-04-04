@@ -71,6 +71,10 @@ button {
   flex-grow: 3;
 }
 
+.hidden {
+  display: none;
+}
+
 .modal {
   position: absolute;
   top: 50%;
@@ -88,6 +92,17 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(1px);
+  z-index: 5;
 }
 .close-cont {
   display: flex;
@@ -110,7 +125,9 @@ button {
   border: none;
   color: white;
   font-family: "Roboto", sans-serif;
-  font-style: regular;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
 }
 .yes {
   background-color: rgb(5, 226, 5);
