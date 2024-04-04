@@ -5,6 +5,9 @@ const operations = document.querySelector(".operations");
 const clearDisplay = document.querySelector(".clear");
 const decimalBtn = document.querySelector(".period");
 const backspace = document.querySelector(".backspace");
+const modal = document.querySelector(".modal");
+const overlay = document.querySelector(".overlay");
+const btnCloseModal = document.querySelector(".cancel");
 
 const add = function (a, b) {
   return a + b;
