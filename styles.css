@@ -9,7 +9,7 @@ body {
   margin-top: 100px;
 }
 .calcu-body {
-  width: 500px;
+  width: 400px;
   height: 600px;
   border: solid 1px black;
   border-radius: 10px;
@@ -22,7 +22,7 @@ body {
 }
 
 .calcu-display {
-  width: 450px;
+  width: 350px;
   height: 200px;
   border: solid 1px black;
   border-radius: 10px;
@@ -33,7 +33,7 @@ body {
 .num-container {
   display: flex;
   margin: 0 18px 0px 18px;
-  width: 450px;
+  width: 350px;
   height: 325px;
   /*border: solid 1px black;*/
   flex-direction: column;
@@ -63,12 +63,13 @@ body {
   align-content: space-between;
 }
 button {
-  width: 112px;
+  width: 87px;
   height: 65px;
 }
 
-.numZero {
-  flex-grow: 3;
+.numZero,
+.operate {
+  flex-grow: 2;
 }
 
 .hidden {
