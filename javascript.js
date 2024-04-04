@@ -160,7 +160,7 @@ clearDisplay.addEventListener("click", function () {
     operator = "";
   }
 });
-btnCloseModal.addEventListener("click", "closeModal");
+btnCloseModal.addEventListener("click", closeModal);
 overlay.addEventListener("click", closeModal);
 
 isEqualTo.addEventListener("click", function () {
