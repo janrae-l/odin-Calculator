@@ -2,12 +2,13 @@ const numberContainer = document.querySelector(".numbers");
 const calcDisplay = document.querySelector(".calcu-display");
 const isEqualTo = document.querySelector(".operate");
 const operations = document.querySelector(".operations");
-const clearDisplay = document.querySelector(".clear");
+const clearBtn = document.querySelector(".clear");
 const decimalBtn = document.querySelector(".period");
 const backspace = document.querySelector(".backspace");
 const modal = document.querySelector(".modal");
 const overlay = document.querySelector(".overlay");
 const btnCloseModal = document.querySelector(".cancel");
+const clearDisplay = document.querySelector(".yes");
 
 const add = function (a, b) {
   return a + b;
@@ -151,7 +152,7 @@ numberContainer.addEventListener("click", numberPressed);
 
 operations.addEventListener("click", operationPress);
 
-clearDisplay.addEventListener("click", function () {
+clearBtn.addEventListener("click", function () {
   if (firstNum.length > 0 || operator.length > 0 || secNum.length > 0) {
     openModal();
   } else {
@@ -160,6 +161,14 @@ clearDisplay.addEventListener("click", function () {
     secNum = "";
     operator = "";
   }
+});
+
+clearDisplay.addEventListener("click", function () {
+  calcDisplay.textContent = "";
+  firstNum = "";
+  secNum = "";
+  operator = "";
+  closeModal();
 });
 btnCloseModal.addEventListener("click", closeModal);
 overlay.addEventListener("click", closeModal);
