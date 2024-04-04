@@ -78,33 +78,24 @@ button {
   width: 40%;
 
   padding: 20px;
+  text-align: center;
   border-radius: 10px;
   box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
   background-color: white;
   z-index: 10;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 .close-cont {
   display: flex;
   justify-content: right;
   align-items: center;
 }
-.close-modal {
-  font-size: 35px;
-  padding: 0;
-  height: 35px;
-  width: 35px;
-  justify-content: flex-end;
-  align-items: center;
-  color: #333;
-  background: none;
-  border: none;
-}
 
 .modal-buttons {
   display: flex;
-  justify-content: right;
+  justify-content: center;
   padding: 0;
 }
 
@@ -117,4 +108,9 @@ button {
 
 .error-msg {
   font-size: 25px;
+}
+
+h2,
+p {
+  margin: 10px 0;
 }
