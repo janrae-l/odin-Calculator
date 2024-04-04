@@ -143,7 +143,8 @@ const openModal = function () {
 
 const closeModal = function () {
   modal.classList.add("hidden");
-  overlay.classList.remove("hidden");
+  overlay.classList.add("hidden");
+  console.log("closeModal clicked");
 };
 //numberDisplay.textContent = "Hello";
 numberContainer.addEventListener("click", numberPressed);
