@@ -19,6 +19,7 @@ body {
   align-content: space-evenly;
   justify-content: space-evenly;
   align-items: center;
+  background-color: black;
 }
 
 .calcu-display {
@@ -26,7 +27,7 @@ body {
   height: 200px;
   border: solid 1px black;
   border-radius: 10px;
-
+  color: white;
   /*margin: 25px;*/
 }
 
@@ -34,7 +35,7 @@ body {
   display: flex;
   margin: 0 18px 0px 18px;
   width: 350px;
-  height: 325px;
+  height: 305px;
   /*border: solid 1px black;*/
   flex-direction: column;
 }
@@ -43,6 +44,8 @@ body {
   display: flex;
   justify-content: space-between;
   align-content: space-between;
+  gap: 4px;
+  margin-bottom: 4px;
 }
 .numOperation {
   display: flex;
@@ -52,24 +55,57 @@ body {
 .numbers {
   display: flex;
   flex-wrap: wrap;
-  flex-grow: 3;
+
   justify-content: space-between;
   align-content: space-between;
+  gap: 4px;
+  margin-bottom: 4px;
+}
+
+.numbers button {
+  background-color: #505050;
+  border: none;
+  border-radius: 3px;
+  color: white;
 }
 
 .operations {
   display: flex;
   flex-direction: column;
-  align-content: space-between;
+
+  align-items: center;
+}
+button.operand {
+  background-color: #ff9500;
+  margin-bottom: 4px;
+  width: 83px;
+  margin-left: 4px;
+  border: none;
+  border-radius: 3px;
+  color: white;
 }
 button {
-  width: 87px;
-  height: 65px;
+  width: 85px;
+  height: 58px;
+  font-size: 22px;
 }
 
 .numZero,
 .operate {
-  flex-grow: 2;
+  flex-grow: 1;
+}
+
+.operate {
+  background-color: #ff9500;
+  border: none;
+  border-radius: 3px;
+  color: white;
+}
+.clear,
+.backspace {
+  background-color: #d4d4d2;
+  border: none;
+  border-radius: 3px;
 }
 
 .hidden {
