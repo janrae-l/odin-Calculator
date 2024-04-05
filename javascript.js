@@ -65,35 +65,7 @@ function popItem(item) {
   arr.pop();
   return arr;
 }
-/*
-const numberDisplay = function () {
-  if (event.target.tagName === "BUTTON") {
-    if (event.target.innerText === "=") {
-      calcDisplay.textContent = "";
-      operator = numberPressed.find(
-        (item) => item === "+" || item === "-" || item === "*" || item === "/"
-      );
-      console.log(operator);
-      const index = numberPressed.indexOf(operator);
-      console.log(index);
-      firstNum = numberPressed.slice(0, index).join("");
-      console.log(firstNum);
-      secNum = numberPressed.slice(index + 1).join("");
-      console.log(secNum);
-      const resultNum = operate(firstNum, secNum, operator);
-      console.log(resultNum);
-      calcDisplay.textContent = resultNum;
-    } else {
-      //numberPressed.push(event.target.innerText);
-      firstNum += event.target.innerText;
-      console.log(firstNum);
-      //console.log(numberPressed);
-      //let numStr = numberPressed.join("");
-      calcDisplay.textContent = firstNum;
-    }
-  }
-};
-*/
+
 const numberPressed = function () {
   if (event.target.tagName === "BUTTON") {
     if (operator.length === 1) {
