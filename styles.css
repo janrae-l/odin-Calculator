@@ -42,6 +42,7 @@ body {
   height: 305px;
   /*border: solid 1px black;*/
   flex-direction: column;
+  cursor: pointer;
 }
 
 .otherButtons {
@@ -92,6 +93,7 @@ button {
   width: 85px;
   height: 58px;
   font-size: 22px;
+  cursor: pointer;
 }
 
 .numZero,
